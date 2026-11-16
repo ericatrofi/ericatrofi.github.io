@@ -1,4 +1,21 @@
 ---
 layout: default
 ---
-{{ content }}
+{% comment %}
+  About page: every "## Heading" in index.md starts a new block (card).
+  Put {: .half} on the line right under a heading to make that block
+  half width; two half blocks in a row sit side by side.
+  Anything written before the first heading is shown above the blocks.
+{% endcomment %}
+{% assign parts = content | split: "<h2" %}
+{% for part in parts %}
+  {% if forloop.first %}
+    {{ part }}
+    <div class="blocks">
+  {% else %}
+    <div class="block{% if part contains 'class="half"' %} block--half{% endif %}">
+      <h2{{ part }}
+    </div>
+  {% endif %}
+{% endfor %}
+    </div>

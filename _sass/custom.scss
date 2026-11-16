@@ -230,6 +230,42 @@ body .publications ol.bibliography li .links a.btn:hover {
   border-color: var(--accent);
 }
 
+// -- About page blocks (one card per "## Heading" in index.md) --
+.blocks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2em;
+  margin-bottom: 1.3em;
+}
+
+.block {
+  box-sizing: border-box;
+  flex: 1 1 100%;
+  min-width: 0;
+  padding: 1.1em 1.5em 0.4em;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+
+  h2 {
+    margin: 0 0 0.45em;
+    font-size: 1.65rem;
+  }
+  ul { padding-left: 1.2em; }
+}
+
+// Half-width blocks: side by side on wide screens, stacked on phones
+.block--half {
+  flex: 1 1 calc(50% - 0.6em);
+  padding: 1em 1.2em 0.3em;
+
+  h2 { font-size: 1.45rem; }
+}
+
+@media (max-width: 640px) {
+  .block--half { flex-basis: 100%; }
+}
+
 // -- Page and post titles ------------------------------------
 .page-title, .post-title { margin-bottom: 0.5em; }
 

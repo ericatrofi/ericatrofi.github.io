@@ -18,6 +18,26 @@ Personal website, built with Jekyll and the [Minimal Light](https://github.com/y
 | Look of menu / gallery / blog      | `_sass/custom.scss`                    |
 | Page layout (sidebar, structure)   | `_layouts/default.html`                |
 
+### About page blocks
+
+Each `## Heading` in `index.md` becomes its own card. Put `{: .half}` on the
+line right under a heading to make it half width; two half cards in a row sit
+side by side (they stack on phones).
+
+## Ideas for later
+
+- **Showcase / card grid for Projects**, inspired by
+  https://luost.me/academic-homepage/showcase : a pinboard of mixed-size cards
+  (image or plot, title, one or two lines, links to paper/code/slides), with
+  some wide "highlight" cards. Plan: keep publications as a list, turn projects
+  into cards, content in a data file (like `_data/art.yml`), plain CSS, no
+  extra library. Two or three card sizes at most. Could later host
+  interactive simulations inside a card.
+- **Hand-drawn menu icons**: already supported, just add drawings (see
+  `_config.yml`, `icon:` under each menu item).
+- **Editor's Note** for headings, if a web licence is bought
+  (self-host the font files in `assets/fonts/`).
+
 ## Preview locally
 
 ```bash
