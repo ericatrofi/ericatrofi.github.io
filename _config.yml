@@ -13,6 +13,11 @@ affiliation_link: https://www.ethz.ch  # TODO
 email: etrofimov (at) ethz.ch
 personal email: erica.trofimov@icloud.com # TODO: written this way to reduce spam
 
+# Quote card under your info in the sidebar.
+# Leave quote empty ("") to hide the card. Author is optional.
+quote: "Your favourite quote goes here. A sentence or two works best."   # TODO
+quote_author: "Author Name"                                               # TODO
+
 # Search engines
 description: Hi there! I'm Erica, a MSc student in Statistics at ETH Zurich.
 keywords: Erica Trofimov
@@ -27,6 +32,9 @@ linkedin: https://www.linkedin.com/in/erica-t-4349362a8                         
 twitter: ""
 
 # Top menu buttons, in order. Add or remove entries freely.
+# Optional hand-drawn icon: save your drawing in assets/img/icons/
+# (transparent PNG or SVG) and add a line under the button, e.g.
+#     icon: /assets/img/icons/art.png
 nav:
   - title: About me
     url: /

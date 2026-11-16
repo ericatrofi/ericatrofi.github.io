@@ -15,6 +15,21 @@ body {
 
 ::selection { background: var(--selection); }
 
+// Paper texture: fine grain drawn with SVG noise (no image files).
+// Strength is --paper-grain in palette.scss.
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: var(--paper-grain, 0.5);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.35 0 0 0 0 0.32 0 0 0 0 0.28 0 0 0 0.16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+}
+
 h1, h2, h3, h4, h5, h6 {
   color: var(--heading);
   font-family: var(--font-display);
@@ -67,6 +82,65 @@ email {
 .social-icons a { color: var(--link) !important; }
 .social-icons a:hover { background-color: var(--soft); }
 
+// Quote card under the links: lifts and tilts slightly on hover
+.sidebar-quote {
+  position: relative;
+  box-sizing: border-box;
+  max-width: 210px;
+  margin: 1.4em auto 0;
+  padding: 2.1em 1.1em 1em;
+  background: var(--soft);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  text-align: center;
+  transition: transform 0.45s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.45s ease;
+
+  // big decorative quotation mark
+  &::before {
+    content: "\201C";
+    position: absolute;
+    top: 0.12em;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--accent);
+    font-family: var(--font-display);
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  &:hover {
+    transform: translateY(-4px) rotate(-1.5deg);
+    box-shadow: 0 10px 22px var(--shadow-hover);
+  }
+
+  blockquote {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    border-radius: 0;
+    color: var(--strong);
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.3;
+  }
+
+  figcaption {
+    margin-top: 0.6em;
+    color: var(--muted);
+    font-size: 0.82rem;
+
+    &::before { content: "\2014\00a0"; }   // a long dash before the author
+  }
+}
+
+// Visitors who turned off animations in their system settings
+@media (prefers-reduced-motion: reduce) {
+  .sidebar-quote, .sidebar-quote:hover { transition: none; transform: none; }
+}
+
 // -- Top menu ------------------------------------------------
 .topnav {
   width: 650px;
@@ -99,6 +173,40 @@ email {
       color: var(--accent-text);
     }
   }
+}
+
+// Hand-drawn menu icons (set "icon:" per menu item in _config.yml).
+// They wiggle when hovered, focused or tapped.
+.topnav a.has-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding-left: 0.6em;
+}
+
+.nav-icon {
+  height: 1.6em;
+  width: auto;
+  margin: -0.3em 0;           // let the drawing be bigger than the text
+  transform-origin: 50% 80%;
+}
+
+.topnav a:hover .nav-icon,
+.topnav a:focus-visible .nav-icon,
+.topnav a:active .nav-icon {
+  animation: doodle-wiggle 0.6s ease-in-out;
+}
+
+@keyframes doodle-wiggle {
+  0%   { transform: rotate(0deg) scale(1); }
+  20%  { transform: rotate(-12deg) scale(1.12); }
+  45%  { transform: rotate(9deg) scale(1.12); }
+  70%  { transform: rotate(-5deg) scale(1.06); }
+  100% { transform: rotate(0deg) scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .topnav a .nav-icon { animation: none !important; }
 }
 
 // Less empty space between the menu and the page content
@@ -201,12 +309,12 @@ body .publications ol.bibliography li .links a.btn:hover {
     display: block;
     width: 100%;
     border-radius: 6px;
-    box-shadow: 0 2px 10px rgba(90, 60, 140, 0.12);
+    box-shadow: 0 2px 10px var(--shadow);
     transition: transform 0.2s, box-shadow 0.2s;
   }
   &:hover img {
     transform: translateY(-2px);
-    box-shadow: 0 6px 18px rgba(90, 60, 140, 0.2);
+    box-shadow: 0 6px 18px var(--shadow-hover);
   }
 }
 
@@ -219,7 +327,7 @@ body .publications ol.bibliography li .links a.btn:hover {
   background: var(--bg);
   text-align: center;
 
-  &::backdrop { background: rgba(35, 22, 55, 0.85); }
+  &::backdrop { background: var(--backdrop); }
 
   img {
     display: block;

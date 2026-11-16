@@ -1,0 +1,35 @@
+// -------------------------------------------------------------
+//  PALETTE AND FONTS for the whole site.
+//  Change a value here and every page follows.
+//  (Fonts are loaded from Google Fonts in _layouts/default.html.)
+//
+//  Current palette: TURQUOISE.
+//  Saved alternatives are in _sass/palettes/. To switch, copy one
+//  over this file (and its -dark version over palette-dark.scss).
+// -------------------------------------------------------------
+
+html:root {
+  --bg:          #f7fcfc;   // page background (white with a hint of aqua)
+  --bg-top:      #e4f5f3;   // soft turquoise glow at the top of the page
+  --text:        #3a4a4c;   // body text
+  --strong:      #233234;   // bold text
+  --muted:       #788b8d;   // dates, captions, small print
+  --heading:     #0f6b6b;   // headings and your name (deep teal)
+  --link:        #0e7c7a;   // links and menu text
+  --link-hover:  #0a5756;
+  --accent:      #0e7c7a;   // filled buttons (active menu item, badges)
+  --accent-text: #ffffff;   // text on filled buttons
+  --soft:        #e3f4f2;   // pale turquoise fills (hover, quotes, code)
+  --selection:   #c4eae6;   // highlighted text
+  --rule:        #d2ebe8;   // thin lines and button outlines
+  --shadow:      rgba(15, 90, 90, 0.12);   // soft shadow under art
+  --shadow-hover: rgba(15, 90, 90, 0.2);
+  --backdrop:    rgba(8, 32, 32, 0.88);    // behind an enlarged image
+  --paper-grain: 0.55;    // paper texture strength: 0 = off, 1 = strong
+
+  --font-body:    "PT Serif", Georgia, serif;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+
+  // used by the theme's publications styles
+  --global-theme-color: var(--accent);
+}

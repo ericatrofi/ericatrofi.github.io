@@ -1,4 +1,4 @@
-<!-- Top menu. The buttons are listed in _config.yml under "nav". -->
+<!-- Top menu. The buttons (and optional drawn icons) are listed in _config.yml under "nav". -->
 <nav class="topnav" aria-label="Main">
   {% for item in site.nav %}
     {% assign active = false %}
@@ -7,6 +7,9 @@
     {% elsif page.url contains item.url %}
       {% assign active = true %}
     {% endif %}
-    <a href="{{ item.url | relative_url }}"{% if active %} class="active" aria-current="page"{% endif %}>{{ item.title }}</a>
+    <a href="{{ item.url | relative_url }}" class="{% if active %}active{% endif %}{% if item.icon %} has-icon{% endif %}"{% if active %} aria-current="page"{% endif %}>
+      {% if item.icon %}<img class="nav-icon" src="{{ item.icon | relative_url }}" alt="">{% endif %}
+      <span>{{ item.title }}</span>
+    </a>
   {% endfor %}
 </nav>
