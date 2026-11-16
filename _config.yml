@@ -36,7 +36,7 @@ twitter: ""
 # (transparent PNG or SVG) and add a line under the button, e.g.
 #     icon: /assets/img/icons/art.png
 nav:
-  - title: About me
+  - title: Home
     url: /
   - title: Projects
     url: /projects/
@@ -48,7 +48,7 @@ nav:
     url: /cv/
 
 # Images
-avatar: /assets/img/avatar.png             # TODO: replace with your photo
+avatar: /assets/img/me.jpeg
 favicon: /assets/img/favicon.png
 favicon_dark: /assets/img/favicon-dark.png
 

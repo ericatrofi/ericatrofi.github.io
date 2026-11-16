@@ -27,8 +27,11 @@ html:root {
   --backdrop:    rgba(8, 32, 32, 0.88);    // behind an enlarged image
   --paper-grain: 0.75;    // paper texture strength: 0 = off, 1 = strong
 --card:        rgba(255, 255, 255, 0.6);
-  --font-body:    "PT Serif", Georgia, serif;
-  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body:    "Crimson Pro", Georgia, serif;
+  --font-size-body: 18px;   // Crimson Pro runs small; PT Serif looked right at 16.5px
+  --font-display: "CMU Serif", "Latin Modern Roman", Georgia, serif;   // LaTeX font (was "Cormorant Garamond")
+  --display-weight: 500;      // headings: 500 = regular (like a LaTeX title), 700 = bold (like \section)
+  --display-spacing: 0;       // extra letter spacing in headings and menu
 
   // used by the theme's publications styles
   --global-theme-color: var(--accent);

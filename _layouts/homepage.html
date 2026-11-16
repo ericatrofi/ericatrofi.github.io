@@ -2,20 +2,28 @@
 layout: default
 ---
 {% comment %}
-  About page: every "## Heading" in index.md starts a new block (card).
-  Put {: .half} on the line right under a heading to make that block
-  half width; two half blocks in a row sit side by side.
-  Anything written before the first heading is shown above the blocks.
+  About page layout.
+  - Text written before the first "## Heading" in index.md (your bio)
+    goes in the first box, without a title.
+  - Every "## Heading" starts a new block (card).
+  - Put {: .half} on the line right under a heading to make that block
+    half width; two half blocks in a row sit side by side.
+  - Put {: .plain} under a heading to show that section as plain text (no box).
 {% endcomment %}
 {% assign parts = content | split: "<h2" %}
+<div class="blocks">
 {% for part in parts %}
   {% if forloop.first %}
-    {{ part }}
-    <div class="blocks">
+    {% assign intro = part | strip_html | strip %}
+    {% if intro != "" %}
+    <div class="block block--intro">
+      {{ part }}
+    </div>
+    {% endif %}
   {% else %}
-    <div class="block{% if part contains 'class="half"' %} block--half{% endif %}">
+    <div class="block{% if part contains 'class="half"' %} block--half{% endif %}{% if part contains 'class="plain"' %} block--plain{% endif %}">
       <h2{{ part }}
     </div>
   {% endif %}
 {% endfor %}
-    </div>
+</div>

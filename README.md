@@ -37,6 +37,7 @@ side by side (they stack on phones).
   `_config.yml`, `icon:` under each menu item).
 - **Editor's Note** for headings, if a web licence is bought
   (self-host the font files in `assets/fonts/`).
+- art of the month/image of the month or maths fact of the month 
 
 ## Preview locally
 
