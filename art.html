@@ -1,0 +1,51 @@
+---
+title: Art
+permalink: /art/
+---
+<!-- TODO: an intro sentence (or delete this paragraph). The pieces are listed in _data/art.yml -->
+<p class="art-intro">A small collection of my paintings, drawings and photographs. Click an image to see it larger.</p>
+
+<div class="gallery">
+  {% for piece in site.data.art %}
+  <figure class="gallery-item">
+    <button type="button" class="gallery-open"
+            data-full="{{ piece.image | relative_url }}"
+            data-caption="{{ piece.title | default: '' | escape }}{% if piece.year %}, {{ piece.year }}{% endif %}{% if piece.medium %}. {{ piece.medium | escape }}{% endif %}{% if piece.note %}. {{ piece.note | escape }}{% endif %}">
+      <img src="{{ piece.image | relative_url }}" alt="{{ piece.title | default: 'Artwork' | escape }}" loading="lazy">
+    </button>
+    {% if piece.title or piece.year %}
+    <figcaption>
+      {% if piece.title %}<span class="art-title">{{ piece.title }}</span>{% endif %}{% if piece.year %}, {{ piece.year }}{% endif %}
+      {% if piece.medium %}<br><span class="art-medium">{{ piece.medium }}</span>{% endif %}
+    </figcaption>
+    {% endif %}
+  </figure>
+  {% endfor %}
+</div>
+
+<!-- Lightbox: shows a clicked image large. Close with Esc, the × button, or a click outside. -->
+<dialog class="lightbox" id="lightbox">
+  <button type="button" class="lightbox-close" aria-label="Close">&times;</button>
+  <img id="lightbox-img" alt="">
+  <p id="lightbox-caption"></p>
+</dialog>
+
+<script>
+  (function () {
+    var box = document.getElementById('lightbox');
+    var img = document.getElementById('lightbox-img');
+    var cap = document.getElementById('lightbox-caption');
+    if (!box || typeof box.showModal !== 'function') return;
+    document.querySelectorAll('.gallery-open').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        img.src = btn.dataset.full;
+        img.alt = btn.querySelector('img').alt;
+        cap.textContent = btn.dataset.caption;
+        box.showModal();
+      });
+    });
+    box.addEventListener('click', function (e) {
+      if (e.target === box || e.target.classList.contains('lightbox-close')) box.close();
+    });
+  })();
+</script>

@@ -1,0 +1,80 @@
+# ─────────────────────────────────────────────────────────────
+#  SITE SETTINGS
+#  After editing this file, restart the local preview
+#  (Ctrl+C in the terminal, then `bundle exec jekyll serve` again).
+#  Lines marked TODO are placeholders for you to fill in.
+# ─────────────────────────────────────────────────────────────
+
+# Basic information (shown in the left sidebar)
+title: Erica Trofimov
+position: MSc Student                       # TODO
+affiliation: ETH Zurich                     # TODO
+affiliation_link: https://www.ethz.ch  # TODO
+email: etrofimov (at) ethz.ch
+personal email: erica.trofimov@icloud.com # TODO: written this way to reduce spam
+
+# Search engines
+description: Hi there! I'm Erica, a MSc student in Statistics at ETH Zurich.
+keywords: Erica Trofimov
+url: https://ericatrofi.github.io
+baseurl: ""
+
+# Sidebar links. Delete a line (or leave it empty) to hide that icon.
+google_scholar: ""                         # TODO
+cv_link: /cv/
+github_link: https://github.com/ericatrofi
+linkedin: https://www.linkedin.com/in/erica-t-4349362a8                             # TODO
+twitter: ""
+
+# Top menu buttons, in order. Add or remove entries freely.
+nav:
+  - title: About me
+    url: /
+  - title: Projects
+    url: /projects/
+  - title: Blog
+    url: /blog/
+  - title: Art
+    url: /art/
+  - title: CV
+    url: /cv/
+
+# Images
+avatar: /assets/img/avatar.png             # TODO: replace with your photo
+favicon: /assets/img/favicon.png
+favicon_dark: /assets/img/favicon-dark.png
+
+# Appearance
+enable_footnote: true    # "Powered by Jekyll and Minimal Light" line
+auto_dark_mode: true     # follow the visitor's light/dark system setting
+font: "Serif"            # or "Sans Serif"
+
+# ── Technical settings (rarely need changing) ────────────────
+lang: en
+timezone: Europe/Zurich
+markdown: kramdown
+permalink: /blog/:year/:title/
+
+plugins:
+  - jekyll-feed
+
+feed:
+  path: blog/feed.xml
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: page
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - .bundle

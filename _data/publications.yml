@@ -1,0 +1,22 @@
+# Your publications. Each entry starting with "- title:" is one paper.
+# Copy an entry to add another; delete the lines you don't need
+# (e.g. no code → delete the "code:" line).
+# Put teaser images in assets/img/ and refer to them as /assets/img/name.png
+
+main:
+
+  - title: "Title of Your Paper"
+    authors: <strong>Erica Trofimov</strong>, Coauthor One, Coauthor Two
+    conference_short: CONF
+    conference: Name of the Conference or Journal <strong>(CONF)</strong>, 2026.
+    pdf: https://arxiv.org/
+    code: https://github.com/ericatrofi
+    image: /assets/img/teaser_example.png
+    notes: Oral Presentation
+
+  - title: "Another Paper Title"
+    authors: Coauthor One, <strong>Erica Trofimov</strong>
+    conference_short: JOUR
+    conference: Journal Name <strong>(JOUR)</strong>, 2025.
+    pdf: https://arxiv.org/
+    image: /assets/img/teaser_example_2.png

@@ -1,0 +1,27 @@
+// -------------------------------------------------------------
+//  PALETTE AND FONTS for the whole site.
+//  Change a value here and every page follows.
+//  (Fonts are loaded from Google Fonts in _layouts/default.html.)
+// -------------------------------------------------------------
+
+html:root {
+  --bg:          #fcfaff;   // page background (white with a hint of lilac)
+  --bg-top:      #f3ecfc;   // soft lilac glow at the top of the page
+  --text:        #4f4860;   // body text
+  --strong:      #3c3550;   // bold text
+  --muted:       #8d849c;   // dates, captions, small print
+  --heading:     #6a4c93;   // headings and your name
+  --link:        #7d55b8;   // links and menu text
+  --link-hover:  #5e3f8a;
+  --accent:      #7d55b8;   // filled buttons (active menu item, badges)
+  --accent-text: #ffffff;   // text on filled buttons
+  --soft:        #f1eafb;   // pale lilac fills (hover, quotes, code)
+  --selection:   #e2d4f7;   // highlighted text
+  --rule:        #e6dcf3;   // thin lines and button outlines
+
+  --font-body:    "Lora", Georgia, serif;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+
+  // used by the theme's publications styles
+  --global-theme-color: var(--accent);
+}
