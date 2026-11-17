@@ -11,12 +11,12 @@ position: MSc Student                       # TODO
 affiliation: ETH Zurich                     # TODO
 affiliation_link: https://www.ethz.ch  # TODO
 email: etrofimov (at) ethz.ch
-personal email: erica.trofimov@icloud.com # TODO: written this way to reduce spam
+ # TODO: written this way to reduce spam
 
 # Quote card under your info in the sidebar.
 # Leave quote empty ("") to hide the card. Author is optional.
-quote: "Your favourite quote goes here. A sentence or two works best."   # TODO
-quote_author: "Author Name"                                               # TODO
+quote: "..."   # TODO
+quote_author: "..."                                               # TODO
 
 # Search engines
 description: Hi there! I'm Erica, a MSc student in Statistics at ETH Zurich.
