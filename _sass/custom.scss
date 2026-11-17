@@ -145,6 +145,131 @@ email {
   }
 }
 
+// "Of the Month" card in the sidebar (_data/picks.yml)
+.pick-card {
+  box-sizing: border-box;
+  max-width: 210px;
+  margin: 1.2em auto 0;
+  padding: 0.9em 1em 0.8em;
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 14px;
+  text-align: left;
+}
+
+.pick-card-title {
+  margin: 0 0 0.5em;
+  color: var(--heading);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  line-height: 1.2;
+}
+.pick-month {
+  display: block;
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.pick-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: flex;
+    gap: 0.6em;
+    margin: 0 0 0.55em;
+    line-height: 1.35;
+  }
+  li > i {
+    flex: 0 0 1em;
+    margin-top: 0.25em;
+    color: var(--accent);
+    text-align: center;
+  }
+  a { font-weight: 600; }
+}
+.pick-kind {
+  display: block;
+  color: var(--muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.pick-note {
+  display: block;
+  font-size: 0.9rem;
+}
+
+// The theme styles every list in the sidebar as a row of grey buttons;
+// undo that for the picks card.
+header ul.pick-list {
+  position: static;
+  width: auto;
+  height: auto;
+  background: none;
+  border: 0;
+  border-radius: 0;
+}
+header .pick-list li {
+  float: none;
+  width: auto;
+  height: auto;
+  border: 0;
+}
+header .pick-list a {
+  display: inline;
+  height: auto;
+  padding: 0;
+  color: var(--link);
+  font-size: inherit;
+  line-height: inherit;
+  text-align: left;
+}
+header .pick-list a:hover { color: var(--link-hover); }
+
+// links written inside a note: normal weight, underlined
+.pick-list .pick-note a {
+  font-weight: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.pick-more {
+  display: inline-block;
+  margin-top: 0.1em;
+  font-size: 0.85rem;
+}
+
+// Your longer thought (archive page only)
+.pick-why {
+  display: block;
+  margin-top: 0.5em;
+  color: var(--text);
+}
+
+// Archive page
+.picks-intro { font-size: 1.05rem; }
+.picks-month {
+  margin-bottom: 1.2em;
+  h3 { margin: 0 0 0.5em; }
+  .pick-note, .pick-why { font-size: 1.05rem; }
+}
+
+// The sidebar is fixed in place on wide screens: if it gets taller than
+// the window, let it scroll so nothing is cut off.
+@media (min-width: 961px) {
+  header {
+    box-sizing: border-box;
+    max-height: 100vh;
+    overflow-y: auto;
+    scrollbar-width: none;
+  }
+  header::-webkit-scrollbar { display: none; }
+}
+
 // Visitors who turned off animations in their system settings
 @media (prefers-reduced-motion: reduce) {
   .sidebar-quote, .sidebar-quote:hover { transition: none; transform: none; }

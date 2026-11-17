@@ -14,6 +14,7 @@ Personal website, built with Jekyll and the [Minimal Light](https://github.com/y
 | Art gallery                        | images in `assets/img/art/` + list in `_data/art.yml` |
 | Blog posts                         | one `.md` file per post in `_posts/`   |
 | CV                                 | `cv.md` (PDF goes in `assets/files/`)  |
+| "Of the Month" picks (sidebar card + `/picks/` archive) | `_data/picks.yml` (newest month at the top) |
 | Colours and fonts (whole site)     | `_sass/palette.scss` (dark mode: `_sass/palette-dark.scss`) |
 | Look of menu / gallery / blog      | `_sass/custom.scss`                    |
 | Page layout (sidebar, structure)   | `_layouts/default.html`                |

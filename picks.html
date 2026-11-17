@@ -1,0 +1,18 @@
+---
+title: My monthly picks
+permalink: /picks/
+---
+<!-- TODO: rewrite this intro in your own words. Picks are listed in _data/picks.yml -->
+<p class="picks-intro">
+  Every month I share one thing made by people that I think is worth your time:
+  a website that is useful or beautiful, and sometimes a piece of art or a fact
+  I love. A small, hand-picked antidote to an internet increasingly filled with
+  automated content.
+</p>
+
+{% for entry in site.data.picks %}
+<div class="block picks-month">
+  <h3>{{ entry.month | append: "-01" | date: "%B %Y" }}</h3>
+  {% include pick-entry.html entry=entry full=true %}
+</div>
+{% endfor %}

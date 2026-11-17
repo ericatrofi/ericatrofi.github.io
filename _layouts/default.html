@@ -102,6 +102,18 @@
           {% endif %}
         </figure>
         {% endif %}
+
+        {% assign latest_pick = site.data.picks | first %}
+        {% if latest_pick %}
+        <!-- "Of the Month" card. Picks are listed in _data/picks.yml -->
+        <div class="pick-card">
+          <p class="pick-card-title">My monthly picks
+            <span class="pick-month">{{ latest_pick.month | append: "-01" | date: "%B %Y" }}</span>
+          </p>
+          {% include pick-entry.html entry=latest_pick %}
+          <a class="pick-more" href="{{ '/picks/' | relative_url }}">Past picks &rarr;</a>
+        </div>
+        {% endif %}
         <br>
       </header>
 
