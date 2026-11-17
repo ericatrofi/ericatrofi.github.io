@@ -270,16 +270,22 @@ header .pick-list a:hover { color: var(--link-hover); }
   .pick-note, .pick-why { font-size: 1.05rem; }
 }
 
-// The sidebar is fixed in place on wide screens: if it gets taller than
-// the window, let it scroll so nothing is cut off.
+// Smart sidebar: fixed in place when it fits the window; when it is taller
+// than the window it scrolls together with the page instead (no split
+// scrolling). The "sidebar-tall" class is set by a small script in
+// _layouts/default.html.
 @media (min-width: 961px) {
-  header {
-    box-sizing: border-box;
-    max-height: 100vh;
-    overflow-y: auto;
-    scrollbar-width: none;
-  }
-  header::-webkit-scrollbar { display: none; }
+  .sidebar-tall header { position: absolute; }
+}
+
+// Compact sidebar so it fits on most screens
+.pick-card--sidebar .pick-note { display: none; }   // note: phone card + archive only
+.image.avatar img { padding: 12px; }                 // theme default was 20px
+.sidebar-quote { margin-top: 1em; }
+.pick-card--sidebar { margin-top: 0.9em; }
+.social-icons { margin-top: 0.6em; }                  // replaces two empty lines
+@media (min-width: 961px) {
+  header { padding-top: 3.2em; padding-bottom: 1.5em; }   // theme: 4em top
 }
 
 // Visitors who turned off animations in their system settings

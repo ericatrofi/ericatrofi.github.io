@@ -63,8 +63,6 @@
         <email>{{ site.email }}</email>
         {% endif %}
 
-        <br>
-        <br>
         <div class="social-icons">
         {% if site.google_scholar and site.google_scholar != "" %}
         <a href="{{ site.google_scholar }}" title="Google Scholar">
@@ -105,7 +103,6 @@
 
         <!-- Monthly picks card: here on computers (picks are in _data/picks.yml) -->
         {% include pick-card.html where="sidebar" %}
-        <br>
       </header>
 
       <section>
@@ -126,5 +123,20 @@
       </footer>
     </div>
     <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
+    <script>
+      // Smart sidebar: if the sidebar is taller than the window, let it
+      // scroll with the page instead of staying fixed (see custom.scss).
+      (function () {
+        var header = document.querySelector('header');
+        if (!header) return;
+        function check() {
+          document.body.classList.toggle('sidebar-tall', header.offsetHeight > window.innerHeight);
+        }
+        check();
+        window.addEventListener('load', check);
+        window.addEventListener('resize', check);
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(check);
+      })();
+    </script>
   </body>
 </html>
