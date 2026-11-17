@@ -250,6 +250,18 @@ header .pick-list a:hover { color: var(--link-hover); }
   color: var(--text);
 }
 
+// Where the card shows: sidebar on computers, bottom of the page on phones
+.pick-card--bottom { display: none; }
+
+@media print, screen and (max-width: 960px) {
+  .pick-card--sidebar { display: none; }
+  .pick-card--bottom {
+    display: block;
+    max-width: none;
+    margin: 1.5em 0 0;
+  }
+}
+
 // Archive page
 .picks-intro { font-size: 1.05rem; }
 .picks-month {

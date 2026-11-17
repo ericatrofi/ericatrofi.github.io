@@ -1,0 +1,15 @@
+{%- comment -%}
+  "My monthly picks" card (newest entry of _data/picks.yml).
+  Shown in the sidebar on computers and at the bottom of the page on phones:
+  {% include pick-card.html where="sidebar" %} or where="bottom"
+{%- endcomment -%}
+{%- assign latest_pick = site.data.picks | first -%}
+{%- if latest_pick -%}
+<div class="pick-card pick-card--{{ include.where }}">
+  <p class="pick-card-title">My monthly picks
+    <span class="pick-month">{{ latest_pick.month | append: "-01" | date: "%B %Y" }}</span>
+  </p>
+  {% include pick-entry.html entry=latest_pick %}
+  <a class="pick-more" href="{{ '/picks/' | relative_url }}">Past picks &rarr;</a>
+</div>
+{%- endif -%}
