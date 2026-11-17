@@ -1,0 +1,29 @@
+---
+title: Blog
+permalink: /blog/
+---
+<!-- Posts are Markdown files in the _posts folder. They appear here automatically, newest first. -->
+<p class="blog-intro">Notes, essays and things I'm thinking about. <a href="{{ '/blog/feed.xml' | relative_url }}"><i class="fas fa-rss"></i> RSS</a></p>
+
+{% if site.posts.size == 0 %}
+<p>No posts yet.</p>
+{% else %}
+{% assign current_year = "" %}
+{% for post in site.posts %}
+  {% assign year = post.date | date: "%Y" %}
+  {% if year != current_year %}
+    {% unless forloop.first %}</ul>{% endunless %}
+    <h3 class="blog-year">{{ year }}</h3>
+    <ul class="post-list">
+    {% assign current_year = year %}
+  {% endif %}
+  <li>
+    <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d" }}</time>
+    <div>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      {% if post.description %}<p>{{ post.description }}</p>{% endif %}
+    </div>
+  </li>
+  {% if forloop.last %}</ul>{% endif %}
+{% endfor %}
+{% endif %}

@@ -1,0 +1,22 @@
+// Dark-mode version of the palette (used when the visitor's
+// computer is set to dark mode and auto_dark_mode is true).
+// Current palette: TURQUOISE.
+
+@media (prefers-color-scheme: dark) {
+  html:root {
+    --bg:          #121f1f;
+    --bg-top:      #183030;
+    --text:        #d2e5e3;
+    --strong:      #f0fbfa;
+    --muted:       #8fa8a6;
+    --heading:     #7fdcd3;
+    --link:        #6fd2c8;
+    --link-hover:  #a8ece5;
+    --accent:      #6fd2c8;
+    --accent-text: #121f1f;
+    --soft:        #1c3231;
+    --selection:   #2b5552;
+    --rule:        #274140;
+    --card:        rgba(255, 255, 255, 0.04);
+  }
+}

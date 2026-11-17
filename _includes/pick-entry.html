@@ -1,0 +1,35 @@
+{%- comment -%}
+  One month of picks. Used by the sidebar card and the archive page.
+  Pass the month's entry as: {% include pick-entry.html entry=... %}
+{%- endcomment -%}
+{%- assign e = include.entry -%}
+<ul class="pick-list">
+  {%- if e.website -%}
+  <li>
+    <i class="fas fa-globe" aria-hidden="true"></i>
+    <span><span class="pick-kind">Website</span>
+      <a href="{{ e.website.url }}" target="_blank" rel="noopener">{{ e.website.name }}</a>
+      {%- if e.website.note %}<span class="pick-note">{{ e.website.note | markdownify | remove: "<p>" | remove: "</p>" | strip }}</span>{% endif -%}
+      {%- if include.full and e.website.why %}<span class="pick-why">{{ e.website.why | markdownify | remove: "<p>" | remove: "</p>" | strip }}</span>{% endif -%}
+    </span>
+  </li>
+  {%- endif -%}
+  {%- if e.art -%}
+  <li>
+    <i class="fas fa-palette" aria-hidden="true"></i>
+    <span><span class="pick-kind">Art</span>
+      {%- if e.art.url %}<a href="{{ e.art.url }}" target="_blank" rel="noopener">{{ e.art.name }}</a>{% else %}<strong>{{ e.art.name }}</strong>{% endif -%}
+      {%- if e.art.note %}<span class="pick-note">{{ e.art.note | markdownify | remove: "<p>" | remove: "</p>" | strip }}</span>{% endif -%}
+      {%- if include.full and e.art.why %}<span class="pick-why">{{ e.art.why | markdownify | remove: "<p>" | remove: "</p>" | strip }}</span>{% endif -%}
+    </span>
+  </li>
+  {%- endif -%}
+  {%- if e.fact -%}
+  <li>
+    <i class="fas fa-square-root-variable" aria-hidden="true"></i>
+    <span><span class="pick-kind">Fact</span>
+      <span class="pick-note">{{ e.fact.text | markdownify | remove: "<p>" | remove: "</p>" | strip }}</span>
+    </span>
+  </li>
+  {%- endif -%}
+</ul>

@@ -1,0 +1,15 @@
+<!-- Top menu. The buttons (and optional drawn icons) are listed in _config.yml under "nav". -->
+<nav class="topnav" aria-label="Main">
+  {% for item in site.nav %}
+    {% assign active = false %}
+    {% if item.url == "/" %}
+      {% if page.url == "/" or page.url == "/index.html" %}{% assign active = true %}{% endif %}
+    {% elsif page.url contains item.url %}
+      {% assign active = true %}
+    {% endif %}
+    <a href="{{ item.url | relative_url }}" class="{% if active %}active{% endif %}{% if item.icon %} has-icon{% endif %}"{% if active %} aria-current="page"{% endif %}>
+      {% if item.icon %}<img class="nav-icon" src="{{ item.icon | relative_url }}" alt="">{% endif %}
+      <span>{{ item.title }}</span>
+    </a>
+  {% endfor %}
+</nav>

@@ -1,0 +1,21 @@
+// Dark-mode version of the palette (used when the visitor's
+// computer is set to dark mode and auto_dark_mode is true).
+
+@media (prefers-color-scheme: dark) {
+  html:root {
+    --bg:          #1e1a27;
+    --bg-top:      #272036;
+    --text:        #ddd5ea;
+    --strong:      #f3eefb;
+    --muted:       #a197b3;
+    --heading:     #cdb4f2;
+    --link:        #bea0ea;
+    --link-hover:  #ddc9fb;
+    --accent:      #bea0ea;
+    --accent-text: #1e1a27;
+    --soft:        #2b2538;
+    --selection:   #4a3d66;
+    --rule:        #3a3249;
+    --card:        rgba(255, 255, 255, 0.04);
+  }
+}

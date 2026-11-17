@@ -1,0 +1,23 @@
+# "Of the Month": things made by people that are worth a visit.
+# The NEWEST month goes at the TOP. The sidebar card shows the first entry;
+# the archive page (/picks/) shows all of them.
+#
+# Each month can have any of: website, art, fact. Leave out what you
+# don't have; only what's there is shown. Copy a block to add a month.
+#
+#   note: short line, shown in the sidebar card AND the archive
+#   why:  optional longer personal thought, shown ONLY on the archive page
+# Links work in both: [text](https://...). Put text containing ": " in quotes.
+
+- month: 2026-11                       # year-month
+  website:
+    name: Story Seed Library
+    url: https://storyseedlibrary.org
+    note: "A free library of Solarpunk art and story prompts for imagining a better climate future." 
+    why: "Sometimes we find it difficult to envision a better, alternative future because we just can't visualize it. This website contains all human-made artworks that helps envisioning a future environment in which humanity learns how to sustainably live on Earth. I discovered it while browsing through a an art contest organized by KAPDA and whose topic was imagining how Zurich 2047 looks like if humanity overcame climate collapse"
+  # art:
+  #   name: Title of the artwork, Artist
+  #   url: https://...
+  #   note: Why you love it.
+  # fact:
+  #   text: A maths or statistics fact in one or two sentences.
